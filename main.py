@@ -17,7 +17,7 @@ ACTIVE_BTN = keyboard.Key.ctrl_r
 EXIT_BTN = keyboard.Key.backspace
 
 # Параметры захвата экрана или видео
-# region = (0, 0, 280, 380)  # Для видеозаписи это может быть неактуально
+# region = (0, 0, 280, 280)  # Для видеозаписи это может быть неактуально
 element_lower = np.array([45, 75, 75])
 element_upper = np.array([75, 255, 255])
 
