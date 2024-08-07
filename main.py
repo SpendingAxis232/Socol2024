@@ -25,16 +25,23 @@ else:
             break
         else:
             nframe = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)
-            lgb = np.array([0, 0, 0])
-            hgb = np.array([0, 0, 0])
-            green_mask = cv2.inRange(frame, lgb, hgb)
+            lgb = np.array([100, 80, 80])
+            hgb = np.array([140, 120, 120])
+            green_mask = cv2.inRange(nframe, lgb, hgb)
             lbb = np.array([0, 0, 0])
             hbb = np.array([0, 0, 0])
-            blue_mask = cv2.inRange(frame, lbb, hbb)
+            blue_mask = cv2.inRange(nframe, lbb, hbb)
             leb = np.array([0, 0, 0])
             heb = np.array([0, 0, 0])
-            explosive_mask = cv2.inRange(frame, leb, heb)
-            x = cv2.findContours(nframe, )
+            explosive_mask = cv2.inRange(nframe, leb, heb)
+            contours_green, _ = cv2.findContours(green_mask, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
+            contours_blue, _ = cv2.findContours(blue_mask, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
+            contours_explosive, _ = cv2.findContours(explosive_mask, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
+            cv2.drawContours(nframe, contours_green, -1, (240, 100, 100), 2)
+            #cv2.drawContours(nframe, contours_blue, -1, (240, 100, 100), 2)
+            #cv2.drawContours(nframe, contours_explosive, -1, (0, 100, 100), 2)
+            cv2.imshow('Contours', nframe)
+
 
 
 
