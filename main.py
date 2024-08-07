@@ -40,7 +40,10 @@ else:
             cv2.drawContours(nframe, contours_green, -1, (240, 100, 100), 2)
             #cv2.drawContours(nframe, contours_blue, -1, (240, 100, 100), 2)
             #cv2.drawContours(nframe, contours_explosive, -1, (0, 100, 100), 2)
-            cv2.imshow('Contours', nframe)
+            frame = cv2.resize(nframe, (width, height))
+            outputfile.write(frame)
+            cv2.imshow('video', frame)
+
 
 
 
