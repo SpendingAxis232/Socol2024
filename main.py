@@ -48,9 +48,9 @@ else:
             outputfile.write(frame)
 
             cv2.imshow('...', frame)
-            cv2.imshow('Green Mask', green_mask)
-            cv2.imshow('Blue Mask', blue_mask)
-            cv2.imshow('Explosive Mask', explosive_mask)
+            cv2.imshow('green Mask', green_mask)
+            cv2.imshow('blue Mask', blue_mask)
+            cv2.imshow('explosive Mask', explosive_mask)
 
             if cv2.waitKey(1) & 0xFF == ord('q'):
                 break
