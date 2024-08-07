@@ -34,4 +34,6 @@ else:
             leb = np.array([0, 0, 0])
             heb = np.array([0, 0, 0])
             explosive_mask = cv2.inRange(frame, leb, heb)
-            x = cv2.findContours(nframe, )
+            contours_green, _ = cv2.findContours(green_mask, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
+            contours_blue, _ = cv2.findContours(blue_mask, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
+            contours_explosive, _ = cv2.findContours(explosive_mask, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
