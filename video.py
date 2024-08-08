@@ -1,5 +1,6 @@
 import cv2
 import numpy as np
+import pyautogui as pag
 
 first = "C://Users/N_OFFICE_5/PycharmProjects/Socol2024/Blum - Google Chrome 2024-08-05 11-12-09.mp4"
 new = 'C://Users/N_OFFICE_5/PycharmProjects/Socol2024/NewBlum.mp4'
