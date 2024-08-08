@@ -3,18 +3,24 @@ import numpy as np
 import pyautogui as pag
 import time
 
-width, height = pag.size()
-center_x, center_y = width // 2, height // 2 + 60
+center_x, center_y = pag.size()[0] // 2, pag.size()[1]
 roi_x, roi_y = 251, 345
 x1 = center_x - roi_x
 x2 = center_x + roi_x
 y1 = center_y - roi_y
 y2 = center_y + roi_y
 
+
 time.sleep(5)
 
+def get_screen():
+    screenshot = pag.screenshot()
+    frame = np.array(screenshot)
+    frame = cv2.cvtColor(frame, cv2.COLOR_RGBA2BGR)
+    return frame
+
 while True:
-    frame = pag.screenshot()
+    frame = get_screen()
     roi = frame[y1:y2, x1:x2]
     nframe = cv2.cvtColor(roi, cv2.COLOR_BGR2HSV)
     lgb = np.array([50, 150, 150])
