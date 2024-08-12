@@ -16,7 +16,8 @@ def main():
     window_name = None
     windows_list = gw.getAllTitles()
     for title in windows_list:
-        if "Telegram Web" in title:
+        print(title)
+        if "Telegram Web" in title or "Blum - Google Chrome" in title:
             window_name = title
             break
 
